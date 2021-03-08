@@ -84,7 +84,7 @@
 #define BUZZ_PIO_IDX		30
 #define BUZZ_PIO_IDX_MASK (1 << BUZZ_PIO_IDX)
 
-#define CONT_MAX	2
+#define CONT_MAX	3
 /************************************************************************/
 /* constants                                                            */
 /************************************************************************/
@@ -105,7 +105,7 @@ typedef struct{
 } song;
 
 typedef struct{
-	song songs[3];
+	song songs[4];
 	song curr_song;
 } disc;
 
@@ -118,7 +118,7 @@ typedef struct{
 #include "GoT.h"
 #include "Mii.h"
 #include "Mario.h"
-
+#include "StarWars.h"
 
 /************************************************************************/
 /* variaveis globais                                                    */
@@ -152,7 +152,7 @@ void play(song curr_song);
 void tone(int freq, int time) {
 	// caso a nota seja uma pausa
 	if (freq == 0) {
-		gfx_mono_draw_string("           ", 50,16, &sysfont);
+		gfx_mono_draw_string("                 ", 0,16, &sysfont);
 		pio_clear(PIOD, BUZZ_PIO_IDX_MASK);
 		// pausa pelo tempo inserido
 		delay_ms(time);
@@ -160,7 +160,7 @@ void tone(int freq, int time) {
 	else {
 		char snum[5];
 		itoa(freq, snum, 10);
-		gfx_mono_draw_string("           ", 50,16, &sysfont);
+		gfx_mono_draw_string("                 ", 10,50, &sysfont);
 		gfx_mono_draw_string(snum, 50,16, &sysfont);
 		if(freq<350){pio_clear(PIOA, LED1_PIO_IDX_MASK);}
 		else if(freq<550){pio_clear(PIOC, LED2_PIO_IDX_MASK);}
@@ -226,17 +226,18 @@ void play(song curr_song) {
 		int pause = 0;
 		if (!pio_get(PIOA, PIO_INPUT, BUT3_PIO_IDX_MASK)){
 			thisNote = notes * 2;
-			gfx_mono_draw_string("    NEXT     ", 0,16, &sysfont);
+			gfx_mono_draw_string("    STOP     ", 0,16, &sysfont);
 			delay_ms(500);
 			pio_clear(PIOB, LED3_PIO_IDX_MASK);
 			delay_ms(1000);
+			gfx_mono_draw_string("                 ", 0,16, &sysfont);
 		}
 		if(!pio_get(PIOC, PIO_INPUT, BUT2_PIO_IDX_MASK)){
 			pause=1;
 			pio_clear(PIOA, LED1_PIO_IDX_MASK);
 			pio_clear(PIOC, LED2_PIO_IDX_MASK);
 			pio_clear(PIOB, LED3_PIO_IDX_MASK);
-			gfx_mono_draw_string("PAUSE", 50,16, &sysfont);
+			gfx_mono_draw_string("    PAUSE    ", 0,16, &sysfont);
 			delay_ms(1000);
 			while(pause == 1){
 				if(!pio_get(PIOC, PIO_INPUT, BUT2_PIO_IDX_MASK)){
@@ -304,7 +305,7 @@ void play(song curr_song) {
 			delay_ms(1000);
 			
 			
-			song got, mii, mario;
+			song got, mii, mario, starwars;
 
 			strcpy( got.title, got_title);
 			got.tempo = got_tempo;
@@ -320,11 +321,17 @@ void play(song curr_song) {
 			mario.tempo = mario_tempo;
 			mario.melody = &mario_melody;
 			mario.size = sizeof(mario_melody);
+			
+			strcpy( starwars.title, starwars_title);
+			starwars.tempo = starwars_tempo;
+			starwars.melody = &starwars_melody;
+			starwars.size = sizeof(starwars_melody);
 
 			disc disc1;
 			disc1.songs[0]= got;
 			disc1.songs[1]= mii;
 			disc1.songs[2]= mario;
+			disc1.songs[3]= starwars;
 			disc1.curr_song = disc1.songs[contador];
 			
 			while (1){
@@ -343,7 +350,7 @@ void play(song curr_song) {
 					gfx_mono_draw_string("    BACK     ", 0,16, &sysfont);
 					delay_ms(500);
 					pio_clear(PIOA, LED1_PIO_IDX_MASK);
-					delay_ms(1000);
+					delay_ms(500);
 				}
 
 				//-------------------------------------------------------------------------------
@@ -352,7 +359,8 @@ void play(song curr_song) {
 					gfx_mono_draw_string("    PLAY     ", 0,16, &sysfont);
 					delay_ms(500);
 					pio_clear(PIOC, LED2_PIO_IDX_MASK);
-					delay_ms(1000);
+					delay_ms(500);
+					gfx_mono_draw_string("                 ", 0,16, &sysfont);
 					play(disc1.curr_song);
 				}
 				
@@ -362,7 +370,7 @@ void play(song curr_song) {
 					gfx_mono_draw_string("    NEXT     ", 0,16, &sysfont);
 					delay_ms(500);
 					pio_clear(PIOB, LED3_PIO_IDX_MASK);
-					delay_ms(1000);
+					delay_ms(500);
 				}
 				
 				
