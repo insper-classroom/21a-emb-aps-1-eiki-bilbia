@@ -49,7 +49,7 @@ o OLED1 Xplained Pro, para permitir a comunicação com o usuário através da t
 Um buzzer também foi utilizado para a reprodução das notas musicais. 
 
 <img src="img/oled1.jpg">
-<!-- USAGE EXAMPLES -->
+
 ## Projeto
 
 Para reproduzir as músicas monofonicas com o buzzer, foi necessário implementar uma função que controla a frequência das
