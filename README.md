@@ -40,10 +40,15 @@ O objetivo do projeto é reproduzir músicas monofonicas, que são aquelas que s
 <!-- GETTING STARTED -->
 ## Infraestrutura
 
-Para criar o dispositivo embarcado utilizou-se o microcontrolador ATSAME70Q21, um ARM Cortex M7. Foi utilizado
+Para criar o dispositivo embarcado utilizou-se o microcontrolador ATSAME70Q21, um ARM Cortex M7.
+
+<img src="img/same70.png">
+
+ Foi utilizado
 o OLED1 Xplained Pro, para permitir a comunicação com o usuário através da tela e dos três botões embutidos na extensão.
 Um buzzer também foi utilizado para a reprodução das notas musicais. 
 
+<img src="img/oled1.jpg">
 <!-- USAGE EXAMPLES -->
 ## Projeto
 
@@ -52,15 +57,9 @@ vibrações e considere também o tempo de duração de cada nota.
 
 
 <!-- CONTRIBUTING -->
-## Contributing
+## Video
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+[Video de Demonstração no Youtube](https://www.youtube.com/watch?v=4Uk_XwgxECI "Video Demo")
 
 
 
@@ -70,7 +69,6 @@ Contributions are what make the open source community such an amazing place to b
 Distributed under the MIT License. See `LICENSE` for more information.
 
 
-
 <!-- CONTACT -->
 ## Alunos
 
@@ -78,30 +76,3 @@ Eiki Luis Yamashiro: [GitHub](github.com/EikiYamashiro/), eikily@al.insper.edu.b
 
 Beatriz Muniz: [GitHub](https://github.com/Bilbia/), beatrizmcs@al.insper.edu.br
 
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-
-* []()
-* []()
-* []()
-
-
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/github_username
