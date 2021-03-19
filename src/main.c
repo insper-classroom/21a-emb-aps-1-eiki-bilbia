@@ -209,18 +209,15 @@ void tone(int freq, int time) {
 		pio_clear(PIOB, LED3_PIO_IDX_MASK);
 		gfx_mono_draw_string("    PAUSE    ", 0,16, &sysfont);
 	}
+	gfx_mono_draw_string("             ", 0,16, &sysfont);
+	gfx_mono_draw_string("    PLAY     ", 0,16, &sysfont);
 	// caso a nota seja uma pausa
 	if (freq == 0) {
-		gfx_mono_draw_string("             ", 0,16, &sysfont);
 		pio_clear(PIOD, BUZZ_PIO_IDX_MASK);
 		// pausa pelo tempo inserido
 		delay_ms(time);
 	}
 	else {
-		char snum[5];
-		itoa(freq, snum, 10);
-		gfx_mono_draw_string("             ", 10,50, &sysfont);
-		gfx_mono_draw_string(snum, 50,16, &sysfont);
 		if(freq<350){pio_clear(PIOA, LED1_PIO_IDX_MASK);}
 		else if(freq<550){pio_clear(PIOC, LED2_PIO_IDX_MASK);}
 		else{pio_clear(PIOB, LED3_PIO_IDX_MASK);}
@@ -282,7 +279,14 @@ void play(song curr_song) {
 			noteDuration = (wholenote) / abs(divider);
 			noteDuration *= 1.5;
 		}
-
+		if (!pio_get(PIOA, PIO_INPUT, BUT3_PIO_IDX_MASK)){
+			thisNote = notes*2;
+			gfx_mono_draw_string("    STOP     ", 0,16, &sysfont);
+			delay_ms(500);
+			pio_clear(PIOB, LED3_PIO_IDX_MASK);
+			delay_ms(500);
+		}
+		
 		// toca a nota
 		tone(melody[thisNote], noteDuration * 0.9);
 		// breve pausa para poder diferenciar entre notas
