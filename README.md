@@ -2,7 +2,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <h3 align="center">APS 1</h3>
+  <h3 align="center">Atividade Prática Supervisionada 1</h3>
 
   <p align="center">
     Computacao Embarcada
