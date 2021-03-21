@@ -171,7 +171,8 @@ src/main.d src/main.o: ../src/main.c ../src/asf.h \
  d:\microship\ studio\ 7\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\string.h \
  d:\microship\ studio\ 7\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\xlocale.h \
  d:\microship\ studio\ 7\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\sys\string.h \
- ../src/GoT.h ../src/Mii.h ../src/Mario.h ../src/StarWars.h
+ ../src/functions.h ../src/defines.h ../src/structs.h ../src/GoT.h \
+ ../src/Mii.h ../src/Mario.h ../src/StarWars.h
 
 ../src/asf.h:
 
@@ -540,6 +541,12 @@ d:\microship\ studio\ 7\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\includ
 d:\microship\ studio\ 7\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\xlocale.h:
 
 d:\microship\ studio\ 7\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\sys\string.h:
+
+../src/functions.h:
+
+../src/defines.h:
+
+../src/structs.h:
 
 ../src/GoT.h:
 
