@@ -47,7 +47,7 @@
 /************************************************************************/
 
 void init(void);
-void tone(int freq, int time);
+void tone(int freq, int time, int progress);
 void back_song(disc* disc1);
 void next_song(disc* disc1);
 void play(song curr_song);
@@ -139,22 +139,22 @@ int main(void)
 	strcpy( got.title, got_title);
 	got.tempo = got_tempo;
 	got.melody = &got_melody;
-	got.size = sizeof(got_melody)/sizeof(got_melody[0]);
+	got.size = sizeof(got_melody);
 
 	strcpy( mii.title, mii_title);
 	mii.tempo = mii_tempo;
 	mii.melody = &mii_melody;
-	mii.size = sizeof(mii_melody)/sizeof(mii_melody[0]);
+	mii.size = sizeof(mii_melody);
 
 	strcpy( mario.title, mario_title);
 	mario.tempo = mario_tempo;
 	mario.melody = &mario_melody;
-	mario.size = sizeof(mario_melody)/sizeof(mario_melody[0]);
+	mario.size = sizeof(mario_melody);
 			
 	strcpy( starwars.title, starwars_title);
 	starwars.tempo = starwars_tempo;
 	starwars.melody = &starwars_melody;
-	starwars.size = sizeof(starwars_melody)/sizeof(starwars_melody[0]);
+	starwars.size = sizeof(starwars_melody);
 
 	disc disc1;
 	disc1.songs[0]= got;
