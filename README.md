@@ -34,7 +34,7 @@
 <!-- ABOUT THE PROJECT -->
 ## Sobre o Projeto
 
-O objetivo do projeto é reproduzir músicas monofonicas, que são aquelas que só possuem uma única nota tocada por vez.
+O objetivo do projeto é reproduzir músicas monofônicas, que são aquelas que só possuem uma única nota tocada por vez. Todas as músicas foram obtidas em um repositório apontado pelos professores, cujo link está mais abaixo. O projeto toca 4 músicas diferentes, e você pode circular entre elas clicando nos botões do OLED, além de tocar a música, pausar e parar. O projeto também consta com leds que piscam de acordo com a frequência de cada nota e uma barra de progresso de cada música.
 
 
 <!-- GETTING STARTED -->
@@ -50,9 +50,13 @@ Um buzzer também foi utilizado para a reprodução das notas musicais.
 
 <img src="img/oled1.jpg">
 
+## Ligações elétricas
+
+Para montar a placa, deve-se encaixar o OLED1 nos pinos EXT1 da placa Atmel:  
+
 ## Projeto
 
-Para reproduzir as músicas monofonicas com o buzzer, foi necessário implementar uma função que controla a frequência das
+Para reproduzir as músicas monofônicas com o buzzer, foi necessário implementar uma função que controla a frequência das
 vibrações e considere também o tempo de duração de cada nota. 
 
 
