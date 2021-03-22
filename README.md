@@ -54,6 +54,14 @@ Um buzzer também foi utilizado para a reprodução das notas musicais.
 
 Para montar a placa, deve-se encaixar o OLED1 nos pinos EXT1 da placa Atmel:  
 
+<img src="img/conec_oled.jpeg">
+
+E para conectar o buzzer devemos conectá-lo aos seguintos pinos da placa:
+
+<img src="img/conec_buzzer.jpeg">
+
+<img src="img/buzzer_pinos.jpeg">
+
 ## Projeto
 
 Para reproduzir as músicas monofônicas com o buzzer, foi necessário implementar uma função que controla a frequência das
