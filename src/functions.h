@@ -25,6 +25,8 @@ void tone(int freq, int time, int progress) {
 	strncat (str1, str2, progress);
 	gfx_mono_draw_string("             ", 0,16, &sysfont);
 	gfx_mono_draw_string(str1, 0,16, &sysfont);
+	
+	
 	//gfx_mono_draw_string(snum, 50,16, &sysfont);
 	// caso a nota seja uma pausa
 	if (freq == 0) {
@@ -61,19 +63,17 @@ void play(song curr_song) {
 	// copia a melodia da musica atual pra variavel melody
 	int progress = 0;
 	int melody_size = curr_song.size;
-	int melody[melody_size];
-	memcpy(melody, curr_song.melody, melody_size);
 	int tempo = curr_song.tempo;
 	
-	int notes = melody_size/2;
+	int notes = melody_size /2;
 	int wholenote = (60000 * 4) / tempo;
-	long divider = 0, noteDuration = 0;
+	int divider = 0, noteDuration = 0;
 	
 	for (int thisNote = 0; thisNote < notes * 2; thisNote = thisNote + 2) {
 		
-		progress = (int)((thisNote)/(notes/13));
+		progress = (int)thisNote/(notes/13)/2;
 		
-		divider = (long)melody[thisNote + 1];
+		divider = curr_song.melody[thisNote + 1];
 		if (divider > 0) {
 			noteDuration = (wholenote) / divider;
 		} else if (divider < 0) {
@@ -89,7 +89,7 @@ void play(song curr_song) {
 		}
 		
 		// toca a nota
-		tone(melody[thisNote], noteDuration * 0.9, progress);
+		tone(curr_song.melody[thisNote], noteDuration * 0.9, progress);
 		// breve pausa para poder diferenciar entre notas
 		delay_ms(noteDuration*0.1);
 	}
