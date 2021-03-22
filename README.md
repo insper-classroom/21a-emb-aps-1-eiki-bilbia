@@ -48,7 +48,7 @@ Para criar o dispositivo embarcado utilizou-se o microcontrolador ATSAME70Q21, u
 o OLED1 Xplained Pro, para permitir a comunicação com o usuário através da tela e dos três botões embutidos na extensão.
 Um buzzer também foi utilizado para a reprodução das notas musicais. 
 
-<img src="img/oled1.jpg">
+<img src="img/oled1.png">
 
 ## Ligações elétricas
 
@@ -67,11 +67,22 @@ E para conectar o buzzer devemos conectá-lo aos seguintos pinos da placa:
 Para reproduzir as músicas monofônicas com o buzzer, foi necessário implementar uma função que controla a frequência das
 vibrações e considere também o tempo de duração de cada nota. 
 
+## Código
+
+O código foi estruturado da seguinte forma: 
+
+- main.c : arquivo principal do projeto
+- GoT.h, Mario.h, Mii.h, StarWars.h : músicas e suas variáveis específicas
+- funcoes.h : funções de reprodução musical, como o tone, que "toca" cada nota dependendo da frequência, e a play, que toca a música inteira
+- structs.h : possui todos os structs utilizados no código, tanto os das músicas individualmente quanto da coletânea delas
+- notas_freq : defines das frequências de cada nota
+- defines : defines dos periféricos utilizados
+
 
 <!-- CONTRIBUTING -->
 ## Video
 
-[Video de Demonstração no Youtube](https://www.youtube.com/watch?v=4Uk_XwgxECI "Video Demo")
+[Video de Demonstração no Youtube](https://www.youtube.com/watch?v=nX7ybE1t-lo "Video Demo")
 
 
 
