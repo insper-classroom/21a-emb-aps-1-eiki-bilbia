@@ -15,19 +15,7 @@
 
 
 
-<!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary><h2 style="display: inline-block">Sumário</h2></summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">Sobre o Projeto</a>
-    </li>
-    <li>
-      <a href="#getting-started">Infraestrutura</a>
-    </li>
-    <li><a href="#usage">Projeto</a></li>
-  </ol>
-</details>
+
 
 
 
