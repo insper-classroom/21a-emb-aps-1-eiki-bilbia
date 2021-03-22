@@ -84,18 +84,14 @@ O código foi estruturado da seguinte forma:
 
 [Video de Demonstração no Youtube](https://www.youtube.com/watch?v=nX7ybE1t-lo "Video Demo")
 
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-
 <!-- CONTACT -->
 ## Alunos
 
 Eiki Luis Yamashiro: [GitHub](github.com/EikiYamashiro/), eikily@al.insper.edu.br
 
 Beatriz Muniz: [GitHub](https://github.com/Bilbia/), beatrizmcs@al.insper.edu.br
+
+## Referências
+
+Repositórios das músicas: https://github.com/robsoncouto/arduino-songs/
 
